@@ -17,8 +17,7 @@ The project includes a GitHub Actions workflow to test the game in test_mode.
 How to Test
 
 Run the game in test mode:
-(bash)
-python -c "from guess_the_number import guess_the_number; guess_the_number(test_mode=True)"
+(bash) python -c "from guess_the_number import guess_the_number; guess_the_number(test_mode=True)"
 
 (bash)
 git add README.md
