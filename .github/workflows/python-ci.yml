@@ -25,10 +25,6 @@ jobs:
         run: |
           python -m pip install --upgrade pip
 
-      - name: List Repository Files
-        run: ls -R
-
       - name: Test Python Script
         run: |
-          set -e
-          python -c "from guess_the_number import guess_the_number; print('Testing function...'); assert guess_the_number(testmode=True)"
+          python -c "from guess_the_number import guess_the_number; assert guess_the_number(test_mode=True)"

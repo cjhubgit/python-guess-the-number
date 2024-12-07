@@ -1,6 +1,6 @@
 import random
 
-def guess_the_number(test_mode=False):  # test_mode is included as a parameter
+def guess_the_number(test_mode=False):
     print("Welcome to 'Guess the Number'!")
     print("I have selected a number between 1 and 100.")
     print("Can you guess what it is?")
@@ -9,7 +9,6 @@ def guess_the_number(test_mode=False):  # test_mode is included as a parameter
     attempts = 0
 
     if test_mode:
-        # Simulate guesses for testing
         for guess in range(1, 101):
             attempts += 1
             if guess == number_to_guess:
