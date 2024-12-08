@@ -1,11 +1,16 @@
 import time
+import sys  # Added sys to handle command-line arguments
 
 def clock_timer():
     print("Welcome to the Clock Timer")
     print("Debug: Entering clock_timer function")
 
     try:
-        countdown_time = int(input("Enter the countdown time in seconds: "))
+        if len(sys.argv) > 1:  # Check if arguments are passed via the command line
+            countdown_time = int(sys.argv[1])
+        else:
+            countdown_time = int(input("Enter the countdown time in seconds: "))
+        
         print(f"Debug: User entered {countdown_time}")
         if countdown_time < 0:
             print("Please enter a positive number.")
