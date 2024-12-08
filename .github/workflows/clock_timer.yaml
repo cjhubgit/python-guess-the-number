@@ -1,22 +1,24 @@
 name: Clock Timer Workflow
 
-on: 
-    push:
-        branches:
-        - main
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-    run-clock-timer:
-        runs-on: ubuntu-latest
+  run-clock-timer:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-        steps:
-            - name: Checkout repository
-              uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
 
-            - name: Set up Python 
-              uses: actions/setup-python@v4
-              with:
-                python-version: '3.11'
-
-            - name: Run Clock Timer Script
-              run: python clock_timer/clock_timer.py 
+      - name: Run Clock Timer Script
+        run: python clock_timer/clock_timer.py 10
